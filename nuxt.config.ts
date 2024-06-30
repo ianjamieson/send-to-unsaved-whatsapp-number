@@ -2,11 +2,14 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   nitro: {
-    preset: 'cloudflare-pages'
+    preset: 'cloudflare-pages',
+    output: {
+      dir: 'dist'
+    }
   },
   modules: [
-    "@nuxt/content",
-    "@nuxthq/studio",
+    // "@nuxt/content",
+    // "@nuxthq/studio",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
     "@nuxt/image",
@@ -14,5 +17,4 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxt/eslint"
   ],
-  css: ["~/assets/css/main.css"],
 })

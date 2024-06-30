@@ -3,6 +3,16 @@
 
 // const phoneStore = usePhoneStore();
 
+useHead({
+    title: 'Send to Unsaved WhatsApp Number',
+    meta: [
+        {
+            name: 'description',
+            content: 'Send a message directly to a phone number on WhatsApp without having to save it as a contact on your phone'
+        }
+    ]
+});
+
 
 </script>
 <template>
