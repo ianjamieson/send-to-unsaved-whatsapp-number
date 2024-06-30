@@ -10,9 +10,11 @@
     <h1 class="font-extrabold text-white text-3xl sm:text-4xl md:text-5xl md:leading-tight">
         Send to Unsaved WhatsApp Number
     </h1>
-    <p class="font-secondary text-slate-50 md:text-lg lg:text-xl">Use the form below to paste your phone number.</p>
+    <p class="font-secondary text-white opacity-70 md:text-lg lg:text-xl">
+        Copy and paste the phone number you wish to contact in the field below. Make sure you include a country code.
+    </p>
 
-    <Send></Send>
+    <Send/>
 
     <!-- <div>
         <button @click="phoneStore.clear()">Clear all records</button>
@@ -22,5 +24,5 @@
         </div>
     </div> -->
 
-    <!-- <PoweredByNovaMantis class="absolute right-0 bottom-0"></PoweredByNovaMantis> -->
+    <PoweredByNovaMantis class="fixed right-3 bottom-6"/>
 </template>
