@@ -21,4 +21,6 @@
             <p>{{ record.date }}</p>
         </div>
     </div> -->
+
+    <!-- <PoweredByNovaMantis class="absolute right-0 bottom-0"></PoweredByNovaMantis> -->
 </template>

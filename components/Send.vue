@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { countries } from '~/data/countries';
+import type { countries } from '~/data/countries';
 import { usePhoneStore } from '~/stores/PhoneStore';
 
 const phone = ref('');
@@ -20,10 +20,7 @@ const send = () => {
 watch(phone, (value) => {
     const phoneCheck = usePhoneCheck(value);
     phoneIsValid.value = phoneCheck.isValid.value;
-
-    // find country
-    country.value = countries.find(country => country.dial_code === phoneCheck.dialCode.value?.two) ?? null
-
+    country.value = phoneCheck.dialCode.value;
 })
 
 // check clipboard for phone number
@@ -61,22 +58,29 @@ onMounted(() => {
                 <div class="absolute left-1 top-1/2 -mt-4 text-3xl">
                     {{ country?.flag }}
                 </div>
-                <input type="text" v-model="phone" placeholder="Phone number" name="phone_number"
+                <input
+v-model="phone" type="text" placeholder="Phone number" name="phone_number"
                 class="pl-10 rounded-l-lg border bg-white py-3 px-4 text-2xl focus:outline-none focus:ring-2 focus:ring-green-200">
             </div>
 
             <button
                 :disabled="!phoneIsValid"
-                @click="send"
                 class="rounded-r-lg bg-green-400 p-3 px-4 text-xl font-semibold text-green-900
                 disabled:opacity-50 disabled:cursor-not-allowed"
+                @click="send"
             >Send</button>
         </div>
-        <!-- <div class="text-sm bg-green-300">
-            Pasted from clipboard: {{ phone }}
-        </div> -->
-        <div v-if="!phoneIsValid && phone.length > 3">
-            Please enter a valid phone number
+        <div class="h-12 p-3 text-yellow-300">
+            <template v-if="phone.length > 3">
+
+                <template v-if="!country">
+                    Please enter a valid country prefix, for example +44 for UK
+                </template>
+
+                <template v-else-if="!phoneIsValid">
+                    Please enter a valid phone number
+                </template>
+            </template>
         </div>
     </div>
 </template>
