@@ -46,27 +46,18 @@ onMounted(() => {
 <template>
     <div>
         <div class="flex justify-center">
-            <label for="phone_number" class="hidden">Phone number:</label>
-            <!-- <select ref="country" class="w-[75px] rounded-l-lg text-center">
-                <option v-for="country in countries"
-                    :key="country.code"
-                    :value="country.dial_code">
-                    {{ country.flag }} {{ country.dial_code }}
-                </option>
-            </select> -->
             <div class="relative">
                 <div class="absolute left-1 top-1/2 -mt-4 text-3xl">
                     {{ country?.flag }}
                 </div>
                 <input
-v-model="phone" type="text" placeholder="Phone number" name="phone_number"
-                class="pl-10 rounded-l-lg border bg-white py-3 px-4 text-2xl focus:outline-none focus:ring-2 focus:ring-green-200">
+                v-model="phone" type="text" placeholder="Phone number" name="phone_number"
+                class="w-full pl-10 rounded-l-lg border bg-white py-3 px-4 text-xl focus:outline-none focus:ring-2 focus:ring-green-200">
             </div>
-
             <button
                 :disabled="!phoneIsValid"
                 class="rounded-r-lg bg-green-400 p-3 px-4 text-xl font-semibold text-green-900
-                disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled:opacity-50 disabled:cursor-not-allowed flex-none"
                 @click="send"
             >Send</button>
         </div>
@@ -83,4 +74,21 @@ v-model="phone" type="text" placeholder="Phone number" name="phone_number"
             </template>
         </div>
     </div>
+
+    <div class="flex items-center">
+        <div class="flex items-center">
+            <!-- <label for="phone_number" class="hidden">Phone number:</label> -->
+            <!-- <select ref="country" class="w-[75px] rounded-l-lg text-center">
+                <option v-for="country in countries"
+                    :key="country.code"
+                    :value="country.dial_code">
+                    {{ country.flag }} {{ country.dial_code }}
+                </option>
+            </select> -->
+
+
+        </div>
+
+    </div>
+
 </template>
