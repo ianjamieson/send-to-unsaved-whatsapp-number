@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     "@pinia-plugin-persistedstate/nuxt",
     "@nuxt/image",
     "@nuxtjs/tailwindcss",
-    "@vueuse/nuxt"
+    "@vueuse/nuxt",
+    "@nuxt/eslint"
   ],
   css: ["~/assets/css/main.css"],
 })

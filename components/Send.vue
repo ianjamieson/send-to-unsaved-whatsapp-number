@@ -24,7 +24,6 @@ watch(phone, (value) => {
     // find country
     country.value = countries.find(country => country.dial_code === phoneCheck.dialCode.value?.two) ?? null
 
-
 })
 
 // check clipboard for phone number
@@ -41,7 +40,7 @@ onMounted(() => {
                     phone.value = text
                 }
             })
-        }, 1000)
+        }, 250)
     }
 })
 
