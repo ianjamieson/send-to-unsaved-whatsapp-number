@@ -4,11 +4,11 @@
 // const phoneStore = usePhoneStore();
 
 useHead({
-    title: 'Send to Unsaved WhatsApp Number',
+    title: 'Enter your phone number',
     meta: [
         {
             name: 'description',
-            content: 'Send a message directly to a phone number on WhatsApp without having to save it as a contact on your phone'
+            content: 'Send a message directly to a phone number on WhatsApp without having to save the number as a contact on your phone'
         }
     ]
 });
@@ -18,10 +18,10 @@ useHead({
 <template>
     <div class="space-y-8 text-center">
         <h1 class="font-extrabold text-white text-3xl sm:text-4xl md:text-5xl md:leading-tight">
-            Send to Unsaved WhatsApp Number
+            WhatsApp Unsaved Number
         </h1>
         <p class="font-secondary text-white opacity-70 md:text-lg lg:text-xl">
-            Copy and paste the phone number you wish to contact in the field below. Make sure you include a country code.
+            Enter phone number you wish to contact in the field below. Make sure you include a country code.
         </p>
         <Send/>
         <!-- <div>

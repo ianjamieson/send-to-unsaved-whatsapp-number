@@ -1,7 +1,6 @@
 <script setup lang="ts">
 useHead({
-    title: 'Enter your phone number',
-    titleTemplate: '%s | Send to Unsaved WhatsApp Number',
+    titleTemplate: '%s | WhatsApp Unsaved Number',
 })
 
 </script>

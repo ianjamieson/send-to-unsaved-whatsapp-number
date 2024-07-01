@@ -7,6 +7,10 @@ const country = ref<typeof countries[number]>();
 const phoneIsValid = ref(false);
 const phoneStore = usePhoneStore();
 
+const settings = ref({
+    pasteFromClipboard: true
+})
+
 const send = () => {
     const phoneCheck = usePhoneCheck(phone.value)
     phoneStore.add({
@@ -27,7 +31,7 @@ watch(phone, (value) => {
 onMounted(() => {
     if (navigator.clipboard) {
         setInterval(() => {
-            if (!document.hasFocus()) {
+            if (!document.hasFocus() || !settings.value.pasteFromClipboard) {
                 return
             }
             navigator.clipboard.readText().then(text => {
@@ -72,6 +76,17 @@ onMounted(() => {
                     Please enter a valid phone number
                 </template>
             </template>
+        </div>
+        <div class="flex justify-center">
+            <label for="pasteFromClipboard" class="flex items-center">
+                <input
+                    id="pasteFromClipboard"
+                    v-model="settings.pasteFromClipboard"
+                    type="checkbox"
+                    class="mr-2"
+                >
+                <span class="text-white opacity-70">Automatically Paste from clipboard</span>
+            </label>
         </div>
     </div>
 
