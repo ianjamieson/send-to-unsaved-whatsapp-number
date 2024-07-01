@@ -21,7 +21,7 @@ useHead({
             WhatsApp Unsaved Number
         </h1>
         <p class="font-secondary text-white opacity-70 md:text-lg lg:text-xl">
-            Enter phone number you wish to contact in the field below. Make sure you include a country code.
+            Enter phone a number you wish to contact in the field below. Make sure you include a country code.
         </p>
         <Send/>
         <!-- <div>
