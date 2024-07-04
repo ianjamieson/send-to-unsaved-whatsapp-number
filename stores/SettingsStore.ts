@@ -1,6 +1,6 @@
 export const useSettingsStore = defineStore('SettingsStore', () => {
     const pasteFromClipboard = ref<boolean>(true);
-    const saveToHistory = ref<boolean>(true);
+    const saveToHistory = ref<boolean>(false);
 
     const all = {
         pasteFromClipboard,
