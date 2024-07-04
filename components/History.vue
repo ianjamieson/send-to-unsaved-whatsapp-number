@@ -35,4 +35,7 @@ const recordsByDate = computed(() => {
             >Clear History</button>
         </div>
     </div>
+    <div v-else class="text-white opacity-70">
+        No history found, send a number by clicking on the button below
+    </div>
 </template>
