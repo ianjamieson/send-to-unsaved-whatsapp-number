@@ -1,8 +1,4 @@
 <script setup lang="ts">
-// import { usePhoneStore } from '~/stores/PhoneStore';
-
-// const phoneStore = usePhoneStore();
-
 useHead({
     title: 'Enter your phone number',
     meta: [
@@ -24,14 +20,11 @@ useHead({
             Enter phone a number you wish to contact in the field below. Make sure you include a country code.
         </p>
         <Send/>
-        <!-- <div>
-            <button @click="phoneStore.clear()">Clear all records</button>
-            <div v-for="record in phoneStore.records" :key="record.phone">
-                <p>{{ record.phone }}</p>
-                <p>{{ record.date }}</p>
-            </div>
-        </div> -->
+        <hr>
+        <div>
+            <NuxtLink to="/history">
+                <Button>View history</Button>
+            </NuxtLink>
+        </div>
     </div>
-
-    <PoweredByNovaMantis class="fixed right-3 bottom-6"/>
 </template>

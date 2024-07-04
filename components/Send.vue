@@ -8,7 +8,8 @@ const phoneIsValid = ref(false);
 const phoneStore = usePhoneStore();
 
 const settings = ref({
-    pasteFromClipboard: true
+    pasteFromClipboard: true,
+    saveToHistory: true
 })
 
 const send = () => {
@@ -58,12 +59,11 @@ onMounted(() => {
                 v-model="phone" type="text" placeholder="Phone number" name="phone_number"
                 class="w-full pl-10 rounded-l-lg border bg-white py-3 px-4 text-xl focus:outline-none focus:ring-2 focus:ring-green-200">
             </div>
-            <button
+            <Button
+                class="rounded-none !rounded-r-lg"
                 :disabled="!phoneIsValid"
-                class="rounded-r-lg bg-green-400 p-3 px-4 text-xl font-semibold text-green-900
-                disabled:opacity-50 disabled:cursor-not-allowed flex-none"
                 @click="send"
-            >Send</button>
+            >Send</Button>
         </div>
         <div class="h-12 p-3 text-yellow-300">
             <template v-if="phone.length > 3">
@@ -78,32 +78,27 @@ onMounted(() => {
             </template>
         </div>
         <div class="flex justify-center">
-            <label for="pasteFromClipboard" class="flex items-center">
-                <input
-                    id="pasteFromClipboard"
-                    v-model="settings.pasteFromClipboard"
-                    type="checkbox"
-                    class="mr-2"
-                >
-                <span class="text-white opacity-70">Automatically Paste from clipboard</span>
-            </label>
+            <div class="space-y-3">
+                <label for="pasteFromClipboard" class="flex items-center">
+                    <input
+                        id="pasteFromClipboard"
+                        v-model="settings.pasteFromClipboard"
+                        type="checkbox"
+                        class="mr-2"
+                    >
+                    <span class="text-white opacity-70">Automatically Paste from clipboard</span>
+                </label>
+                <label for="saveToHistory" class="flex items-center">
+                    <input
+                        id="saveToHistory"
+                        v-model="settings.saveToHistory"
+                        type="checkbox"
+                        class="mr-2"
+                    >
+                    <span class="text-white opacity-70">Save each phone number to history</span>
+                </label>
+            </div>
         </div>
-    </div>
-
-    <div class="flex items-center">
-        <div class="flex items-center">
-            <!-- <label for="phone_number" class="hidden">Phone number:</label> -->
-            <!-- <select ref="country" class="w-[75px] rounded-l-lg text-center">
-                <option v-for="country in countries"
-                    :key="country.code"
-                    :value="country.dial_code">
-                    {{ country.flag }} {{ country.dial_code }}
-                </option>
-            </select> -->
-
-
-        </div>
-
     </div>
 
 </template>
